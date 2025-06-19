@@ -782,70 +782,68 @@ body.dark .bar.light {
   font-weight: bold;
   text-align: center;
   margin-bottom: 2rem;
-  color: #1e2937;
+  color: var(--text-light); /* Use theme variable instead of fixed color */
 }
 
 body.dark #testimonials h2 {
-  color: #f8fafc;
+  color: var(--text-dark); /* Ensure visibility in dark mode */
 }
 
-#testimonials {
-  background: #fffbea;
+
+.testimonials-section {
+  background: var(--bg-light);
+  color: var(--text-light);
   padding: 4rem 2rem;
   text-align: center;
-  color: #1e2937;
-}
-
-body.dark #testimonials {
-  background: #0f172a;
-  color: #f1f5f9;
 }
 
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .testimonial-card {
   background: white;
   padding: 2rem;
   border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
   text-align: left;
-  color: #1e2937;
-}
-
-body.dark .testimonial-card {
-  background: #1e293b;
-  color: #f1f5f9;
-  box-shadow: 0 0 0 1px #334155;
-}
-
-.testimonial-card .quote {
-  font-style: italic;
-  margin-bottom: 1rem;
-}
-
-body.dark .testimonial-card .quote {
-  color: #e2e8f0;
 }
 
 .client-info {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-top: 1.2rem;
 }
 
 .avatar {
+  border-radius: 50%;
   width: 60px;
   height: 60px;
-  border-radius: 50%;
-  border: 2px solid #e2e8f0;
+  object-fit: cover;
 }
 
-body.dark .avatar {
-  border-color: #334155;
+.testimonial-video {
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-video iframe {
+  width: 100%;
+  max-width: 740px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: dark mode support */
+body.dark .testimonial-card {
+  background: #1e293b;
+  color: var(--text-dark);
 }
 
 
