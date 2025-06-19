@@ -1,48 +1,42 @@
-
+// Loader animation: 1% to 100% with fill bar
 window.addEventListener("DOMContentLoaded", () => {
-    const loader = document.getElementById("loader");
-    const percentText = document.getElementById("loader-percent");
-    const fill = document.getElementById("loader-fill");
+  const loader = document.getElementById("loader");
+  const percentText = document.getElementById("loader-percent");
+  const fill = document.getElementById("loader-fill");
 
-    let percent = 1;
-    const interval = setInterval(() => {
-      percent++;
-      percentText.textContent = percent + "%";
-      fill.style.width = percent + "%";
+  let percent = 1;
+  const interval = setInterval(() => {
+    percent++;
+    percentText.textContent = percent + "%";
+    fill.style.width = percent + "%";
 
-      if (percent >= 100) {
-        clearInterval(interval);
+    if (percent >= 100) {
+      clearInterval(interval);
+      setTimeout(() => {
+        loader.style.opacity = "0";
+        loader.style.pointerEvents = "none";
         setTimeout(() => {
-          loader.style.opacity = "0";
-          loader.style.pointerEvents = "none";
-          setTimeout(() => {
-            loader.style.display = "none";
-          }, 300); // fade out duration
-        }, 300); // wait a little before hiding
-      }
-    }, 30); // adjust speed (30ms x 100 = 3 sec)
-  });
+          loader.style.display = "none";
+        }, 300); // fade out duration
+      }, 500); // pause before hiding
+    }
+  }, 60); // ~6 seconds total
+});
 
-// Theme toggle
+// Theme toggle (Light/Dark mode)
 const toggleBtn = document.getElementById("theme-toggle");
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
 
+// Mobile menu toggle
 const toggleMenu = document.getElementById("menu-toggle");
-  const navbar = document.querySelector(".navbar");
-
-  toggleMenu.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-  });
-
-// Loader control
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  loader.style.display = "none";
+const navbar = document.querySelector(".navbar");
+toggleMenu.addEventListener("click", () => {
+  navbar.classList.toggle("active");
 });
 
-// Ripple effect handler
+// Ripple effect on buttons
 const rippleButtons = document.querySelectorAll(".ripple");
 rippleButtons.forEach((btn) => {
   btn.addEventListener("click", function (e) {
@@ -55,7 +49,7 @@ rippleButtons.forEach((btn) => {
   });
 });
 
-// Scroll-based animation
+// Scroll-based animation for elements with .scroll-effect
 window.addEventListener("scroll", () => {
   document.querySelectorAll(".scroll-effect").forEach((el) => {
     const top = el.getBoundingClientRect().top;
@@ -65,13 +59,13 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Tabs interaction
+// Tab button interaction
 const tabs = document.querySelectorAll(".tab");
-tabs.forEach(tab => {
+tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
-    tabs.forEach(t => t.classList.remove("active"));
+    tabs.forEach((t) => t.classList.remove("active"));
     tab.classList.add("active");
-    // Optionally update content here based on tab clicked
+    // Optional: update content based on clicked tab
   });
 });
 
@@ -109,7 +103,7 @@ function showModal(name, desc, price, image) {
   });
 }
 
-// Optional: Click outside modal to close
+// Close modal when clicking outside the box
 window.addEventListener("click", (e) => {
   if (e.target.classList.contains("modal-overlay")) {
     e.target.remove();
