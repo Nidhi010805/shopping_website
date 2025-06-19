@@ -1,3 +1,28 @@
+
+window.addEventListener("DOMContentLoaded", () => {
+    const loader = document.getElementById("loader");
+    const percentText = document.getElementById("loader-percent");
+    const fill = document.getElementById("loader-fill");
+
+    let percent = 1;
+    const interval = setInterval(() => {
+      percent++;
+      percentText.textContent = percent + "%";
+      fill.style.width = percent + "%";
+
+      if (percent >= 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+          loader.style.opacity = "0";
+          loader.style.pointerEvents = "none";
+          setTimeout(() => {
+            loader.style.display = "none";
+          }, 300); // fade out duration
+        }, 300); // wait a little before hiding
+      }
+    }, 30); // adjust speed (30ms x 100 = 3 sec)
+  });
+
 // Theme toggle
 const toggleBtn = document.getElementById("theme-toggle");
 toggleBtn.addEventListener("click", () => {

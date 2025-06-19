@@ -8,7 +8,13 @@
 </head>
 <body>
   <!-- Loader -->
-  <div id="loader" class="loader">Loading...</div>
+  <div id="loader" class="loader-wrapper">
+  <div class="loader-text">Loading <span id="loader-percent">1%</span></div>
+  <div class="loader-bar">
+    <div id="loader-fill"></div>
+  </div>
+</div>
+
 
   <!-- Navbar -->
   <nav class="navbar-container">
@@ -26,7 +32,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 
-  <button id="theme-toggle">Toggle Mode</button>
+  <button id="theme-toggle">Dark Mode</button>
 </nav>
 
 

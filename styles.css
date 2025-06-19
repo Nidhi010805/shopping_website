@@ -19,6 +19,48 @@ body.dark {
   background-color: var(--bg);
   color: var(--text);
 }
+.loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: sans-serif;
+}
+
+.loader-text {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.loader-bar {
+  width: 280px;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#loader-fill {
+  width: 1%;
+  height: 100%;
+  background: var(--primary, #3b82f6);
+  transition: width 0.1s linear;
+}
+
+body.dark .loader-wrapper {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+body.dark .loader-bar {
+  background: #1e293b;
+}
+
 
 /* Navbar Styles */
 /* Base Styles */
