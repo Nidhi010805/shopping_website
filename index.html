@@ -56,17 +56,37 @@
 
 <!-- Modern Capabilities Section -->
   <section id="features-modern" class="features-modern">
-    <h2 class="section-heading">BSS/OSS Capabilities</h2>
-    <div class="tabs">
-      <button class="tab active">💳 BILLING</button>
-      <button class="tab">💼 CHARGING</button>
-      <button class="tab">🗂️ CATALOG</button>
-      <button class="tab">🎟 EVENTS</button>
+  <h2 class="section-heading">BSS/OSS Capabilities</h2>
+  <div class="tabs">
+    <button class="tab active" data-tab="billing">💳 BILLING</button>
+    <button class="tab" data-tab="charging">💼 CHARGING</button>
+    <button class="tab" data-tab="catalog">🗂️ CATALOG</button>
+    <button class="tab" data-tab="events">🎟 EVENTS</button>
+  </div>
+
+  <div class="feature-panels">
+    <div class="feature-panel" id="billing" style="display: block;">
+      <div class="text">
+        <h3>Smart Billing System</h3>
+        <p>A scalable billing engine that automates invoicing, applies usage-based rates, and ensures seamless integration with payment gateways for real-time revenue tracking.</p>
+      </div>
+      <div class="mock-ui">
+        <div class="price-box">₹0.00<span>/usage</span></div>
+        <div class="traffic-box">
+          <p>BILLING METRICS</p>
+          <ul>
+            <li>💰 Subscription +</li>
+            <li>📊 Usage-Based +</li>
+            <li>🧾 Invoicing +</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="feature-panel">
+
+    <div class="feature-panel" id="charging" style="display: none;">
       <div class="text">
         <h3>Online Charging System</h3>
-        <p>AI-powered insights that predict customer needs and drive personalized experiences.</p>
+        <p>AI-powered insights that predict customer needs and drive personalized experiences. Real-time charging ensures precise balance deduction and session control for telecom and utility networks.</p>
       </div>
       <div class="mock-ui">
         <div class="price-box">€0.00<span>/min</span></div>
@@ -80,7 +100,47 @@
         </div>
       </div>
     </div>
-  </section>
+
+    <div class="feature-panel" id="catalog" style="display: none;">
+      <div class="text">
+        <h3>Product & Service Catalog</h3>
+        <p>Create, manage, and launch bundled offerings effortlessly. Our flexible catalog system supports multi-tiered pricing, discounts, and regional variations to meet market demands.</p>
+      </div>
+      <div class="mock-ui">
+        <div class="price-box">🧩 Bundle</div>
+        <div class="traffic-box">
+          <p>CATALOG ITEMS</p>
+          <ul>
+            <li>📦 Products +</li>
+            <li>🔗 Bundles +</li>
+            <li>🏷 Pricing +</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-panel" id="events" style="display: none;">
+      <div class="text">
+        <h3>Event-Driven Architecture</h3>
+        <p>Capture, monitor, and react to key events in real-time. Our event engine allows you to set up triggers, workflows, and data flows across your systems for seamless operations.</p>
+      </div>
+      <div class="mock-ui">
+        <div class="price-box">🎯 Trigger</div>
+        <div class="traffic-box">
+          <p>EVENT TYPES</p>
+          <ul>
+            <li>⚡ User Actions +</li>
+            <li>🔔 System Alerts +</li>
+            <li>📬 API Events +</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
   <section id="products" class="products-section">
   <h2 class="section-heading">Explore Our Products</h2>

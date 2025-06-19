@@ -23,6 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }, 60); // ~6 seconds total
 });
 
+
 // Theme toggle (Light/Dark mode)
 const toggleBtn = document.getElementById("theme-toggle");
 toggleBtn.addEventListener("click", () => {
@@ -35,6 +36,30 @@ const navbar = document.querySelector(".navbar");
 toggleMenu.addEventListener("click", () => {
   navbar.classList.toggle("active");
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll(".tab");
+  const panels = document.querySelectorAll(".feature-panel");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Remove 'active' class from all tabs
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      // Hide all panels
+      panels.forEach((panel) => (panel.style.display = "none"));
+
+      // Show only the selected panel
+      const targetId = tab.getAttribute("data-tab");
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.style.display = "block";
+      }
+    });
+  });
+});
+
 
 // Ripple effect on buttons
 const rippleButtons = document.querySelectorAll(".ripple");
